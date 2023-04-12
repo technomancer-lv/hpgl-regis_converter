@@ -16,6 +16,7 @@ Now you can use a converter program to convert a HPGL file to ReGIS with a comma
 Problems:
 Inkscape outputs HPGL files, but its format is a bit different than AutoCAD output and my program is not properly understanding it.
 Circle drawing commands are not supported, but that's not a problem, because AutoCAD outputs circles as a bunch of short lines.
+Only three "pens" (colors) - 1,2,3 are supported. All others defaults to 0 (background). That's because only four different colors are supported by VT125.
 
 
 
