@@ -126,6 +126,8 @@ if(args.f!=None):
 			for PositionPointer in range (0,int(len(PositionArray)/2)):
 				#For some reason, Autocad outputs HPGL file as 1 inch=24,9mm not 25,4.
 				#That's why coefficient is 0,249
+				#Y axis should be flipped because 0,0 in drawing is bottom left corner
+				#but in ReGIS it's top left.
 				MovementCommand+="["+(str(int(int(PositionArray[(PositionPointer*2)])*0.249))+","+str(479-int(int(PositionArray[(PositionPointer*2)+1])*0.249))+"],")
 			OutFile+=(MovementCommand)
 
