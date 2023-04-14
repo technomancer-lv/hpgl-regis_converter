@@ -8,7 +8,7 @@ This instruction is tested as working using an AutoCAD 2006.
 2. I suggest to use a snap to grid function so lines starts and ends in exact locations of the pixels.
 3. Add a plotter driver that supports HPGL, for example a good old HP7475. This will let you output a HPGL file.
 4. Define a new paper size with 0mm margins. Size does not matter. This is required so you could use whole screen of the terminal.
-5. In plot settings use scaling 1:10, offset 0, use a 767x469mm window, tick "plot to file" option.
+5. In plot settings use scaling 1:10, offset 0, use a 767x469mm window, tick "plot to file" option, choose custom paper size you made.
 6. Resulting plot file should be ASCII HPGL file within the ReGIS screen limits.
 
 Now you can use a converter program to convert a HPGL file to ReGIS. The resulting ReGIS file will be output to te screen. If you're connected to the Linux machine from the vintage graphics terminal, it wil display a resulting graphics. If you pipe the script output to a file, you can later send it to the terminal to display a graphics. At the moment this program is only tested with DEC VT125 terminal that's connected to a Linux machine over LAT.
