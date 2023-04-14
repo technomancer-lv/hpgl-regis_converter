@@ -2,7 +2,7 @@
 import argparse
 
 # Initantiate the parser
-parser = argparse.ArgumentParser(prog='HPGL to ReGIS converter',description='Program that converts HPGL plotter file to ReGIS vector graphics file. It can be used to demonstrate a vintage computer terminals that support ReGIS graphics commands. HPGL plotter file can be generated from various modern vector graphics design programs like AutoCAD or Inkscape.',epilog='Feel free to use this program for your own fun on your own risk. If you find it useful, feel free to contact me or have a look at my retro-computer related twitter profile twitter.com/nuclearlighter')
+parser = argparse.ArgumentParser(prog='regisdraw.py',description='Program that converts HPGL plotter file to ReGIS vector graphics file. It can be used to demonstrate a vintage computer terminals that support ReGIS graphics commands. HPGL plotter file can be generated from various modern vector graphics design programs like AutoCAD or Inkscape.',epilog='Feel free to use this program for your own fun on your own risk. If you find it useful, feel free to contact me or have a look at my retro-computer related twitter profile twitter.com/nuclearlighter')
 parser.add_argument('-f',help='HPGL file name')
 parser.add_argument('-c0',help='Color 0,RGBCMYWD')
 parser.add_argument('-c1',help='Color 1,RGBCMYWD')
@@ -13,7 +13,7 @@ parser.add_argument('-l1',type=int,help='B&W luminosity 1,0-100')
 parser.add_argument('-l2',type=int,help='B&W luminosity 2,0-100')
 parser.add_argument('-l3',type=int,help='B&W luminosity 3,0-100')
 parser.add_argument('-ne',action='store_true',help='Do not erase screen')
-parser.add_argument('-nd',action='store_true',help='Do not draw, only set colors')
+#parser.add_argument('-nd',action='store_true',help='Do not draw, only set colors')
 parser.add_argument('-ct',action='store_true',help='Draw color test')
 args = parser.parse_args()
 
@@ -77,7 +77,8 @@ if(args.ct==True):
 	OutFile+="P[10,240],W(S1),W(I0),P[233,89],V[383,89],W(I1),P[383,89],V[533,89],W(I2),P[233,392],V[383,392],W(I3),P[383,392],V[533,392],W(S0),W(I0),P[266,152],V[258,144],[258,111],[266,102],[275,102],[283,111],[283,144],[275,152],[266,152],P[417,152],V[408,144],[408,111],[417,102],[425,102],[433,111],[433,144],[425,152],[417,152],P[266,303],V[258,295],[258,262],[266,253],[275,253],[283,262],[283,295],[275,303],[266,303],P[417,303],V[408,295],[408,262],[417,253],[425,253],[433,262],[433,295],[425,303],[417,303],W(I1),P[337,111],V[346,102],[346,152],P[337,152],V[354,152],P[488,111],V[496,102],[496,152],P[488,152],V[504,152],P[337,262],V[346,253],[346,303],P[337,303],V[354,303],P[488,262],V[496,253],[496,303],P[488,303],V[504,303],W(I2),P[254,186],V[262,177],[279,177],[287,186],[287,194],[279,202],[262,202],[254,211],[254,228],[287,228],P[404,186],V[412,177],[429,177],[437,186],[437,194],[429,202],[412,202],[404,211],[404,228],[437,228],P[254,337],V[262,329],[279,329],[287,337],[287,345],[279,354],[262,354],[254,362],[254,379],[287,379],P[404,337],V[412,329],[429,329],[437,337],[437,345],[429,354],[412,354],[404,362],[404,379],[437,379],W(I3),P[329,186],V[337,177],[354,177],[362,186],[362,194],[354,202],[346,202],P[354,202],V[362,211],[362,219],[354,228],[337,228],[329,219],P[479,186],V[488,177],[504,177],[512,186],[512,194],[504,202],[496,202],P[504,202],V[512,211],[512,219],[504,228],[488,228],[479,219],P[329,337],V[337,329],[354,329],[362,337],[362,345],[354,354],[346,354],P[354,354],V[362,362],[362,370],[354,379],[337,379],[329,370],P[479,337],V[488,329],[504,329],[512,337],[512,345],[504,354],[496,354],P[504,354],V[512,362],[512,370],[504,379],[488,379],[479,370],"
 
 #If "do not draw" argument is not set, draws HPGL drawing
-if((args.nd!=True)and(args.f!=None)):
+#if((args.nd!=True)and(args.f!=None)):
+if(args.f!=None):
 	#Opens a HPGL file specified by user
 	try:
 		f=open(args.f,"r")
@@ -91,12 +92,12 @@ if((args.nd!=True)and(args.f!=None)):
 	plotfile=plotfile.split(";")
 	#print (plotfile)
 
-	#Do a loop for each HPGL command
+	#Do a loop for each HPGL command in plotter file
 	for CommandCycle in range(0,len(plotfile)):
 		#Pen change command
 		if plotfile[CommandCycle][0:2]=="SP":
 			if(len(plotfile[CommandCycle])>2):
-				#Pens 1,2,3 are used only, because VT125 can only support three colors.
+				#HPGL pens 1,2,3 are used only, because VT125 can only support four colors.
 				#All other defaults to 0 - background
 				if(int(plotfile[CommandCycle][2:])>3):
 					OutFile+=("W(I0),")
