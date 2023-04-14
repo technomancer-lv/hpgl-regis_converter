@@ -41,3 +41,4 @@ TODO:
 - Luminosity check allowed range
 - Test all example commands from readme
 - Check what's wrhong with the inch-mm coefficient
+- Add sample files - simple drawings and HPGL files
