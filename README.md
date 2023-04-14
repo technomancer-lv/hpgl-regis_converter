@@ -3,7 +3,7 @@
 This python code converts simple HPGL plot file to ReGIS graphics file. Result can be output to vintage computer terminals that supports ReGIS graphics, for example DEC VT125 or VT240. This program is made to make demonstration of the vintage graphics terminals easier. It's made to be used with a HPGL plot files that are output by AutoCAD or other vector graphics design programs.
 
 ## How to use this program?
-This instruction is tested as working using an AutoCAD 2006.\
+This instruction is tested as working using an AutoCAD 2006.
 1. In AutoCAD make a drawing inside a 767x469mm rectangle. Each 1mm corresponds to one pixel on the screen of a terminal.
 3. I suggest to use a snap to grid function so lines starts and ends in exact locations of the pixels.
 4. Add a plotter driver that supports HPGL, for example a good old HP7475. This will let you output a HPGL file.
