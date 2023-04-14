@@ -28,7 +28,7 @@ Examples:\
 regisdraw.py #just clears graphics from the screen\
 regisdraw.py -f test1.plt #clears screen for other graphics and draws a test1.plt file\
 regisdraw.py -f test2.plt -ne #draws test2.plt file over the previously drawn graphics\
-regisdraw.py -c0 R -l0 50 #sets channel 0 color to red and channel 0 b&w luminosity to 50%\
+regisdraw.py -ne -c0 R -l0 50 #sets channel 0 color to red and channel 0 b&w luminosity to 50%. Does not erase screen, affects already drawn graphics.\
 regisdraw.py -c0 D -c1 C -c2 M -c3 Y -ct #sets colors for all four channels and draws a color test\
 
 Problems:
