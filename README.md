@@ -15,7 +15,7 @@ This instruction is tested as working using an AutoCAD 2006.
 Now you can use a converter program to convert a HPGL file to ReGIS. The resulting ReGIS commands will be output to te screen. If you're connected to the Linux machine from the vintage graphics terminal, it wil display a resulting graphics. If you pipe the program output to a file, you can later send it to the terminal to display a graphics. Be warned that HPGL file does not carry a pen color information, so you should set ReGIS channel colors manually. It too can be done with this program, see examples below.\
 At the moment this program is only tested with DEC VT125 terminal that's connected to a Linux machine over LAT.
 
-### Program arguments:\
+### Program arguments:
 -f [filename] - specifies HPGL file to be converted to ReGIS\
 -ne - do not erase screen before drawing\
 -c0 [RGBCMYWD] - sets channel 0 color to Red, Gree, Blue, Cyan, Magenta, Yellow, White or Dark (black)\
@@ -24,7 +24,7 @@ At the moment this program is only tested with DEC VT125 terminal that's connect
 -l1, -l2, -l3 - same as -l0 but for other channels\
 -ct - draws color test pattern - a square for each color with all other color numbers drawn on it\
 
-### Examples:\
+### Examples:
 regisdraw.py #just clears graphics from the screen\
 regisdraw.py -f test1.plt #clears screen for other graphics and draws a test1.plt file\
 regisdraw.py -f test2.plt -ne #draws test2.plt file over the previously drawn graphics\
