@@ -20,7 +20,7 @@ Program arguments:\
 -c1, -c2, -c3 - same as -c0 but for other channels\
 -l0 [0-100] - sets channel 0 B&W luminosity 0-100%. Works in 25% steps.\
 -l1, -l2, -l3 - same as -l0 but for other channels\
--ct - draws color test pattern - a square for each color with all other color numbers drawn on it\x
+-ct - draws color test pattern - a square for each color with all other color numbers drawn on it\
 
 Examples:\
 regisdraw.py #just clears graphics from the screen\
