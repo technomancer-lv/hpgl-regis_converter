@@ -24,7 +24,8 @@ Program arguments:\
 
 Examples:\
 regisdraw.py #just clears graphics from the screen\
-regisdraw.py -f test.plt #clears screen for other graphics and draws a test.plt file\
+regisdraw.py -f test1.plt #clears screen for other graphics and draws a test.plt file\
+regisdraw.py -f test2.plt -ne #draws test2.plt file over the previously drawn graphics\
 regisdraw.py -c0 R -l0 50 #sets channel 0 color to red and channel 0 b&w luminosity to 50%\
 regisdraw.py -c0 D -c1 C -c2 M -c3 Y -ct #sets colors for all four channels and draws a color test\
 
@@ -40,5 +41,5 @@ TODO:
 - Inkscape HPGL support
 - Luminosity check allowed range
 - Test all example commands from readme
-- Check what's wrhong with the inch-mm coefficient
+- Check what's wrong with the inch-mm coefficient
 - Add sample files - simple drawings and HPGL files
