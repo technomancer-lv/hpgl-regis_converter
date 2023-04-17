@@ -41,7 +41,6 @@ At the moment this program is only tested with DEC VT125 terminal that's connect
 - Circle support?
 - Scaling support?
 - Inkscape HPGL support
-- Luminosity check allowed range
 - Test all example commands from readme
 - Check what's wrong with the inch-mm coefficient
 - Add readme with commands for sample files

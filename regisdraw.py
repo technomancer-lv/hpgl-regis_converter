@@ -63,13 +63,25 @@ if(args.c3!=None):
 		parser.error("Wrong C3 color")
 
 if(args.l0!=None):
-	OutFile+="S(M0(L"+str(args.l0)+")),"
+	if((args.l0>100)or(args.l0<0)):
+		parser.error("L0 luminosity should be in range 0-100")
+	else:
+		OutFile+="S(M0(L"+str(args.l0)+")),"
 if(args.l1!=None):
-	OutFile+="S(M1(L"+str(args.l1)+")),"
+	if((args.l1>100)or(args.l1<0)):
+		parser.error("L1 luminosity should be in range 0-100")
+	else:
+		OutFile+="S(M1(L"+str(args.l1)+")),"
 if(args.l2!=None):
-	OutFile+="S(M2(L"+str(args.l2)+")),"
+	if((args.l2>100)or(args.l2<0)):
+		parser.error("L2 luminosity should be in range 0-100")
+	else:
+		OutFile+="S(M2(L"+str(args.l2)+")),"
 if(args.l3!=None):
-	OutFile+="S(M3(L"+str(args.l3)+")),"
+	if((args.l3>100)or(args.l3<0)):
+		parser.error("L3 luminosity should be in range 0-100")
+	else:
+		OutFile+="S(M3(L"+str(args.l3)+")),"
 
 #Draw color test if requested
 if(args.ct==True):
